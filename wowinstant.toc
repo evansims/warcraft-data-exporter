@@ -1,0 +1,16 @@
+## Title: WoW Instant Collector
+## Notes: A data collector for WoW Instant.
+
+## Author: Okaria
+## eMail: hello@evansims.com
+
+## Interface: 50001
+## Version: 1.0
+
+## Dependencies:
+## DefaultState: Enabled
+## LoadOnDemand: 0
+
+## SavedVariablesPerCharacter: WI_npcCache, WI_flagCacheNPC, WI_factionCache, WI_itemCache, WI_itemCacheBookmark, WI_spellCache, WI_spellCacheBookmark
+
+wowinstant.lua
