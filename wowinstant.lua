@@ -336,24 +336,38 @@ local function getItem(id)
 
 			local lines = WITT:NumLines();
 			if lines > 0 then
-				if WITT.left[lines]:GetText() == "Retrieving item information" then
-					--print("ID " .. id .. "    Icon: " .. sIcon);
-					rerunCommand = true;
-					rerunIDs = rerunIDs + 1;
-					return;
-				end
-
 				for i = 1, lines do
-					local line = WITT.left[i]:GetText();
-					if(line) then
-						itemData['tooltip'][i] = line;
+					local line = WITT.left[i];
+					if line ~= nil then
+						line = line:GetText();
+
+						if line == "Retrieving item information" then
+							rerunCommand = true;
+							rerunIDs = rerunIDs + 1;
+							return;
+						end
+
+						if(line) then
+							itemData['tooltip'][i] = line;
+						end
 					end
 				end
 
 				for i = 1, lines do
-					local line = WITT.right[i]:GetText();
-					if(line) then
-						itemData['tooltip_ext'][i] = line;
+					local line = WITT.right[i];
+
+					if line ~= nil then
+						line = line:GetText();
+
+						if line == "Retrieving item information" then
+							rerunCommand = true;
+							rerunIDs = rerunIDs + 1;
+							return;
+						end
+
+						if(line) then
+							itemData['tooltip_ext'][i] = line;
+						end
 					end
 				end
 			else
